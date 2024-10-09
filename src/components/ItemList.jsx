@@ -1,3 +1,5 @@
+import EmptyView from "./EmptyView";
+
 export default function ItemList({
   items,
   handleDeleteItem,
@@ -5,6 +7,7 @@ export default function ItemList({
 }) {
   return (
     <ul>
+      {items.length === 0 && <EmptyView />}
       {items.map((item) => {
         return (
           <Item
