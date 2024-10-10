@@ -215,6 +215,13 @@ form > input::placeholder {
   font-style: italic;
 }
 
+.item-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn {
   height: 45px;
   width: 100%;

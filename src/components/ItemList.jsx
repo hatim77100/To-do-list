@@ -28,7 +28,7 @@ export default function ItemList({
   });
 
   return (
-    <ul>
+    <ul className={`${items.length === 0 ? "item-flex" : ""}`}>
       {items.length === 0 && <EmptyView />}
 
       {items.length > 0 ? (
