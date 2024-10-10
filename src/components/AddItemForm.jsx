@@ -1,11 +1,13 @@
 import { useRef, useState } from "react";
+import { useItemStore } from "../stores/itemsStore";
 import Button from "./Button";
-import useItemsContext from "./lib/hooks";
+// import useItemsContext from "./lib/hooks";
 
 export default function AddItemForm() {
   const [itemText, setItemText] = useState("");
   const inputRef = useRef();
-  const { handleAddItem } = useItemsContext();
+  // const { handleAddItem } = useItemsContext();
+  const addItem = useItemStore((state) => state.addItem);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +18,7 @@ export default function AddItemForm() {
       return;
     }
 
-    handleAddItem(itemText);
+    addItem(itemText);
     setItemText("");
   };
 
